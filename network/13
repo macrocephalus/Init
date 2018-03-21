@@ -1,0 +1,23 @@
+В чек формі вказано DHCP але це не вірно для нас можливо це можуть побачити французи.
+Можна зробити висновок що це DNS сервер зробимо команду dig 10.51.1.253 отримаємо рез 
+e1r4p11% dig 10.51.1.253
+
+; <<>> DiG 9.8.3-P1 <<>> 10.51.1.253
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 41471
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;10.51.1.253.			IN	A
+
+;; AUTHORITY SECTION:
+.			1479	IN	SOA	a.root-servers.net. nstld.verisign-grs.com. 2018022202 1800 900 604800 86400
+
+;; Query time: 0 msec
+;; SERVER: 10.51.1.253#53(10.51.1.253)
+;; WHEN: Thu Feb 22 23:29:12 2018
+;; MSG SIZE  rcvd: 104
+
+строка SERVER: 10.51.1.253#53 говорить що сервер прийняв запрос на 53 порт порт призначений по замовчуванню для dns
+можна ще просканувати сервер за допомогою nmap і там ми не побачимо ніякого відкритого порта що вказуе на DHSP.

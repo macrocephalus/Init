@@ -1,0 +1,2 @@
+cat /var/run/sshd.pid
+ps aux | grep sshd | grep -v grep
